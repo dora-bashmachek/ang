@@ -1,0 +1,44 @@
+<h1 class="mid">Products</h1>
+
+<!-- <div class="flex ">
+
+<div *ngFor="let product of products" class="box_2" [routerLink]="['/products',product.id]">
+<div class="box">
+
+  <div class="text bg-white dark:bg-gray-800 w-full p-4">
+
+  <p class=" title text-gray-800 dark:text-white text-xl font-medium mb-2">{{ product.title }}</p>
+
+  <p class="price text-gray-800 dark:text-white text-xl font-medium mb-2">price: {{ product.price }}</p>
+
+  <p class="spec text-gray-400 dark:text-gray-300 font-light text-md">RAM: {{ product.spec.RAM }}</p>
+
+  <p class="text-gray-400 dark:text-gray-300 font-light text-md">ROM:{{ product.spec.ROM }}</p>
+
+</div>
+<div class="pictures">
+  <p class="center">
+  <img alt="blog photo" src="/images/blog/1.jpg" class="img max-h-40 w-full object-cover" [src]="product.img" /></p>
+</div>
+</div>
+  <br>
+
+</div>
+
+</div> -->
+
+<div *ngFor="let product of products" class="tap" >
+<div class="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100"> 
+	<img alt="" class="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" [src]="product.img" > 
+	<div class="flex flex-col justify-between p-6 space-y-8">
+		<div class="space-y-2">
+			<h1 class="text-3xl font-semibold tracking-wide">{{ product.title }}</h1> 
+			<h2 class="dark:text-gray-100">{{ product.price }}$</h2> 
+      <p class="spec text-gray-400 dark:text-gray-300 font-light text-md">RAM: {{ product.spec.RAM }}</p>   
+      <p class="text-gray-400 dark:text-gray-300 font-light text-md">ROM:{{ product.spec.ROM }}</p> 
+		</div>
+		<button type="button" class="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 dark:text-gray-900" [routerLink]="['/products',product.id]">open</button> 
+	</div>
+  <br>
+</div>
+</div>
