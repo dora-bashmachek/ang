@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import FirebaseMethods from 'src/utils/firebaseMethods';
 import { Product } from '../models/product.model';
+import { getAuth } from 'firebase/auth';
 
 @Component({
   selector: 'app-products',
@@ -30,4 +31,15 @@ export class ProductsComponent implements OnInit {
     // console.log(this.products);
     
   }
+  async addToCart(id:string){
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const idx = this.products.findIndex((x)=>x.id == id);
+    if (idx !=-1){
+      const product = {...this.products[idx],uid:user?.uid};
+    await this.firebaseMethods.create('cart',product);
+
+    }
+  }
 }
+

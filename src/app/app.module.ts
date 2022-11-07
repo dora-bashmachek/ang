@@ -9,13 +9,19 @@ import { HttpClientModule } from '@angular/common/http';
 import FirebaseMethods from 'src/utils/firebaseMethods';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
+import { LoginComponent } from './login/login.component';
+import { AuthComponent } from './auth/auth.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductsComponent,
-    ProductComponent
+    ProductComponent,
+    LoginComponent,
+    AuthComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

@@ -27,7 +27,7 @@ export default class FirebaseMethods {
   } 
  
   async create(collectionId: string, data: object) { 
-    const docRef = await addDoc(collection(db, 'products'), data); 
+    const docRef = await addDoc(collection(db, collectionId), data); 
     console.log('Document written with ID: ', docRef.id); 
   } 
  

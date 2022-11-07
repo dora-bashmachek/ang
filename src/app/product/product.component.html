@@ -1,8 +1,13 @@
-<div>
-    <img [src]="product.img" />
-    <p>{{ product.id }}</p>
-    <p>{{ product.title }}</p>
-    <p>{{ product.price }}</p>
-    <p>{{ product.spec.RAM }}</p>
-    <p>{{ product.spec.ROM }}</p>
+
+<div class="fl">
+  <div class="imgIn">
+    <img [src]="product.img" class="" />
+</div>
+    <div class="txtIn">
+      <p class="dark:text-gray-400">{{ product.id }}</p>
+      <h1 class="text-5xl font-bold py-6">{{ product.title }}</h1>
+      <p class="dark:text-gray-400">RAM:{{ product.spec.RAM }}</p>
+      <p class="dark:text-gray-400">ROM:{{ product.spec.ROM }}</p>
+      <p>price:{{ product.price }}</p>
+  </div>
 </div>

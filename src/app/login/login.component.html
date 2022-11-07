@@ -1,0 +1,7 @@
+
+<h1>login</h1>
+<form action="/home">
+    <input type="text" placeholder="email" value="alex@gmail.com" #email>
+    <input type="text" placeholder="password" value="qwerty123" #password>
+    <button type="submit" (click)="signIn(email.value, password.value)">submit</button>
+</form>

@@ -1,0 +1,16 @@
+.fl{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8%;
+}
+.cont{
+    width: 1500px;
+    margin: 0 auto;
+}
+.imgIn {
+    width: 50%;
+}
+.txtIn{
+    width: 29%;
+}
