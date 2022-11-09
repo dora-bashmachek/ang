@@ -1,0 +1,23 @@
+.boxing{
+    margin: 0 auto;
+}
+.img{
+    width: 40%;
+    height: 150px;
+    border-right: 1px solid;
+    padding-right: 5%;
+}
+.product{
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5%;
+    height: 250px;
+    align-items: center;
+    cursor: pointer;
+}
+.product:hover{
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.button{
+    background-color: grey;
+}

@@ -4,7 +4,7 @@ import { getAuth, signOut } from "firebase/auth";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: []
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'a-frontend';

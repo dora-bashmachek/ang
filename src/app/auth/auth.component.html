@@ -1,7 +1,25 @@
 
 <h1>auth</h1>
 <form action="/home">
+    <div class="background">
+        <div class="flexin">
+          <div class="kartinka">
+            <img class="immg" src="./images/Снимок экрана (8).png" alt />
+          </div>
+
+          <div class="flex">
+            <div class="part1">
+              <div class="group">
     <input type="text" placeholder="email"  #email>
-    <input type="text" placeholder="password"  #password>
-    <button type="submit" (click)="signUp(email.value, password.value)">submit</button>
+              </div>
+              <div class="group">
+                <input type="text" placeholder="password"  #password>
+              </div>
+              <button class="card-text-button" type="submit" (click)="signUp(email.value, password.value)">submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </form>

@@ -1,1 +1,49 @@
 /* npx ng generate component --skip-tests  -для создания */
+.home {
+    text-align: center;
+  }
+  .menu {
+    background-color: #ffffff;
+  }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+  }
+  .text {
+    width: 35%;
+    text-align: center;
+    font-size: initial;
+  }
+  .text li {
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 150%;
+    padding: 1%;
+  }
+  .welcome {
+    font-size: 365%;
+    height: 0%;
+    font-weight: bold ;
+  }
+  .why{
+    font-weight: bold ;
+    font-size:150%;
+  }
+  h2 {
+    font-weight: bold ;
+
+  }
+  .golova {
+    width: 100%;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    font-size: 222%;
+    align-items: center;
+    margin: 1%;
+    height: 10px;
+  }

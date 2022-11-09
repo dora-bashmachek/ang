@@ -1,0 +1,87 @@
+.dom:hover {
+    color: rgb(138 152 235);
+  }
+  .ducts:hover {
+    color: rgb(138 152 235);
+  }
+  .log:hover {
+    color: rgb(138 152 235);
+  }
+  .caart:hover {
+    color: rgb(138 152 235);
+  }
+  .faav:hover {
+    color: rgb(138 152 235);
+  }
+  .loading {
+    font-size: 170%;
+    text-align: center;
+    padding: 5%;
+    padding-bottom: 5%;
+    padding-bottom: 15%;
+    color: #7b7b7b66;
+  }
+  .error {
+    font-size: 170%;
+    text-align: center;
+    padding: 5%;
+    padding-bottom: 5%;
+    padding-bottom: 15%;
+    color: #7b7b7b66;
+  }
+  .menu {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid;
+  }
+  .menu h1 {
+    font-weight: initial;
+    font-size: unset;
+  }
+  .menuu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  button{
+    text-decoration: none;
+    color: #000000;
+    padding: 0px 10px 0px 10px;
+    font-size: unset;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+    color: #000000;
+    padding: 0px 10px 0px 10px;
+    font-size: unset;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .pro {
+    color: black;
+  }
+  .sto {
+    color: black;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    font-size: 350%;
+    align-items: center;
+    margin: 1%;
+    height: 10px;
+  }
+  .logo {
+    text-align: center;
+    text-shadow: 7px -4px 5px #e7dec4, 0 0 5em #e7dec4;
+  }
+  .lodimg{
+    width: 60%;
+  }
+  .center{
+    align-items: center;
+  }

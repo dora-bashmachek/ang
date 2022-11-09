@@ -1,7 +1,44 @@
-
+```js
 <h1>login</h1>
-<form action="/home">
-    <input type="text" placeholder="email" value="alex@gmail.com" #email>
-    <input type="text" placeholder="password" value="qwerty123" #password>
-    <button type="submit" (click)="signIn(email.value, password.value)">submit</button>
-</form>
+<div class="flex flex-col w-full max-w-md p-12 space-y-4 text-center dark:bg-gray-900 dark:text-gray-100">
+	<h1 class="text-3xl font-semibold">Sign in to your account</h1>
+	<form action="/home" novalidate="" class="space-y-4 ng-untouched ng-pristine ng-valid">
+		<div class="flex flex-col">
+			<label for="email" class="sr-only">Email address</label>
+			<input value="alex@gmail.com" id="email" type="email" placeholder="Email address" class="rounded-t-md dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 focus:ring-violet-400 focus:dark:border-violet-400 focus:ring-2" #email>
+			<label for="password" class="sr-only">Password</label>
+			<input value="qwerty123" id="password" type="text" placeholder="Password" class="-mt-1 rounded-b-md dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 focus:ring-violet-400 focus:dark:border-violet-400 focus:ring-2" #password>
+		</div>
+		<button (click)="signIn(email.value, password.value)" type="submit" class="px-8 py-3 space-x-2 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Sign in</button>
+	</form>
+</div>
+```
+<!-- <form action="/home">
+    <div class="background">
+        <div class="flexin">
+          <div class="kartinka">
+            <img class="immg" src=".\assets\images\Снимок экрана (6).png" alt />
+          </div>
+      <div class="flex">
+        <div class="part2">
+            <input type="text" placeholder="email" value="alex@gmail.com" #email>   
+             <input type="text" placeholder="password" value="qwerty123" #password>
+             <button class="card-text-button" type="submit" (click)="signIn(email.value, password.value)">submit</button>
+          </div>
+        </div>
+          </div>
+        </div>
+</form> -->
+
+<!-- <div class="flex flex-col w-full max-w-md p-12 space-y-4 text-center dark:bg-gray-900 dark:text-gray-100">
+	<h1 class="text-3xl font-semibold">Sign in to your account</h1>
+	<form action="/home" novalidate="" class="space-y-4 ng-untouched ng-pristine ng-valid">
+		<div class="flex flex-col">
+			<label for="email" class="sr-only">Email address</label>
+			<input value="alex@gmail.com" id="email" type="email" placeholder="Email address" class="rounded-t-md dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 focus:ring-violet-400 focus:dark:border-violet-400 focus:ring-2">
+			<label for="password" class="sr-only">Password</label>
+			<input value="qwerty123" id="password" type="text" placeholder="Password" class="-mt-1 rounded-b-md dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 focus:ring-violet-400 focus:dark:border-violet-400 focus:ring-2">
+		</div>
+		<button (click)="signIn(email.value, password.value)" type="button" class="px-8 py-3 space-x-2 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Sign in</button>
+	</form>
+</div> -->
