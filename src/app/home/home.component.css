@@ -6,16 +6,40 @@
     background-color: #ffffff;
   }
   .flex {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding-top: 5%;
+    /* padding-top: 5%; */
   }
   .text {
+    /* top:0;
+    z-index: 99; */
     width: 35%;
     text-align: center;
-    font-size: initial;
+    font-size: initial;    
+    display: flex;
+    justify-content: center;
+  }
+  .predoc{
+    z-index: 1;
+    top:0;
+    position: absolute;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12%;
+    /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
+  }
+  .bordeer{
+    border: 1px solid;
+    padding: 2%;
+    border-radius: 7px;
+  }
+  .knopochka{
+    margin-left: 3%;
   }
   .text li {
     text-decoration: none;
@@ -38,6 +62,13 @@
   }
   .golova {
     width: 100%;
+    height: 615px;
+  }
+  .padd{
+    padding: 0;
+  }
+  .src{
+    z-index: 0;
   }
   .logo {
     display: flex;
