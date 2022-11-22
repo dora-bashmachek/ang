@@ -11,7 +11,7 @@ import { getAuth } from 'firebase/auth';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  products: any = null;
+  sneakers: any = null;
   constructor(private firebaseMethods: FirebaseMethods) {}
 
   async ngOnInit(): Promise<void> {
@@ -19,8 +19,8 @@ export class CartComponent implements OnInit {
     const user = auth.currentUser;
     console.log(user);
     const q = query(collection(db, "cart"), where("uid", "==", user?.uid));
-    const productsSnapshot = await getDocs(q)
-    const products: {
+    const sneakersSnapshot = await getDocs(q)
+    const sneakers: {
       id: string;
       title: any;
       price: any;
@@ -28,9 +28,9 @@ export class CartComponent implements OnInit {
       img: any;
       user_uid: string;
     }[] = [];
-    productsSnapshot.forEach((doc) => {
+    sneakersSnapshot.forEach((doc) => {
       const data = doc.data();
-      products.push({
+      sneakers.push({
         id: doc.id,
         title: data['title'],
         price: data['price'],
@@ -39,8 +39,8 @@ export class CartComponent implements OnInit {
         user_uid:data['user_uid']
       });
     });
-    this.products = products;
-    console.log(this.products);
+    this.sneakers = sneakers;
+    console.log(this.sneakers);
   }
 
 }

@@ -8,14 +8,13 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyD-E_8UUGbvyNMTuUH_PsvOhr-U284Ghkw",
-  authDomain: "angular-exam-58035.firebaseapp.com",
-  databaseURL: "https://angular-exam-58035-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "angular-exam-58035",
-  storageBucket: "angular-exam-58035.appspot.com",
-  messagingSenderId: "774191161402",
-  appId: "1:774191161402:web:d7f06cf97cd61c69831503",
-  measurementId: "G-N36G9EMYLP"
+  apiKey: "AIzaSyCGeiBGyGV3gd0W7KLgGMK3WbnLxnWLk3E",
+  authDomain: "diploma-ang.firebaseapp.com",
+  projectId: "diploma-ang",
+  storageBucket: "diploma-ang.appspot.com",
+  messagingSenderId: "137060095104",
+  appId: "1:137060095104:web:0e0db1453149c0564e0265",
+  measurementId: "G-ZT7858HFC4"
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
