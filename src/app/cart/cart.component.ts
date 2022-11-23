@@ -12,35 +12,47 @@ import { getAuth } from 'firebase/auth';
 })
 export class CartComponent implements OnInit {
   sneakers: any = null;
-  constructor(private firebaseMethods: FirebaseMethods) {}
+  constructor(private firebaseMethods: FirebaseMethods) { }
 
   async ngOnInit(): Promise<void> {
-    const auth = getAuth();
-    const user = auth.currentUser;
-    console.log(user);
-    const q = query(collection(db, "cart"), where("uid", "==", user?.uid));
-    const sneakersSnapshot = await getDocs(q)
-    const sneakers: {
-      id: string;
-      title: any;
-      price: any;
-      spec: any;
-      img: any;
-      user_uid: string;
-    }[] = [];
-    sneakersSnapshot.forEach((doc) => {
-      const data = doc.data();
-      sneakers.push({
-        id: doc.id,
-        title: data['title'],
-        price: data['price'],
-        spec: data['spec'],
-        img: data['img'],
-        user_uid:data['user_uid']
+    const auth = getAuth().onAuthStateChanged(async user => {
+
+      console.log(user);
+      const q = query(collection(db, "cart"), where("uid", "==", user?.uid));
+      const sneakersSnapshot = await getDocs(q)
+      const sneakers: {
+        id: string;
+        productId:string;
+        title: any;
+        price: any;
+        spec: any;
+        img: any;
+        size:any;
+        user_uid: string;
+      }[] = [];
+      console.log("petuz");
+      console.log(sneakersSnapshot)
+
+      sneakersSnapshot.forEach((doc) => {
+        const data = doc.data();
+        console.log("petuz 2");
+        
+        console.log(data);
+        
+        sneakers.push({
+          id: doc.id,
+          productId: data['productId'],
+          title: data['title'],
+          price: data['price'],
+          spec: data['spec'],
+          img: data['img'],
+          size:data['size'],
+          user_uid: data['user_uid']
+        });
       });
-    });
-    this.sneakers = sneakers;
-    console.log(this.sneakers);
+      this.sneakers = sneakers;
+      console.log(this.sneakers);
+    })
   }
 
 }

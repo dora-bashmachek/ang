@@ -14,6 +14,8 @@ export class SneakerComponent implements OnInit {
   id: string;
   sneaker: Sneaker = new Sneaker();
   sneakers: Sneaker[] = [new Sneaker()];
+  size: string = "36";
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private firebaseMethods: FirebaseMethods
@@ -27,14 +29,16 @@ export class SneakerComponent implements OnInit {
     );
     this.sneaker = new Sneaker(sneaker.id, sneaker.title, sneaker.price, sneaker.desc, sneaker.img);
   }
-  async addToCart(id:string){
-    const auth = getAuth();
-    const user = auth.currentUser;
-    const idx = this.sneakers.findIndex((x)=>x.id == id);
-    if (idx !=-1){
-      const sneaker = {...this.sneakers[idx],uid:user?.uid};
-    await this.firebaseMethods.create('cart',sneaker );
+  async addToCart(id: string) {
+    console.log(id);
+    const auth = getAuth().onAuthStateChanged(async user => {
 
-    }
+        const sneaker = { ...this.sneaker, productId:this.sneaker.id, uid: user?.uid, size:this.size };
+        await this.firebaseMethods.create('cart', sneaker);
+    });
+
+  }
+  handleChange(event: Event) {
+   this.size = (event.target as HTMLInputElement).value;
   }
 }
