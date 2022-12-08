@@ -1,4 +1,4 @@
-.dom:hover {
+/* .dom:hover {
     color: rgb(138 152 235);
   }
   .ducts:hover {
@@ -84,4 +84,7 @@
   }
   .center{
     align-items: center;
+  } */
+  .is-open{
+    display: block;
   }

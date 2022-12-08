@@ -1,15 +1,8 @@
-<nav>
+<!-- <nav>
 <div class="w-full h-full bg-black bg-opacity-80 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0" id="chec-div">
     <div class="w-full absolute z-10 right-0 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700" id="checkout">
         <div class="flex items-end lg:flex-row flex-col justify-end" id="cart">
             <div class="lg:w-1/2 md:w-8/12 w-full lg:px-8 lg:py-14 md:px-6 px-4 md:py-8 py-4 bg-white overflow-y-auto overflow-x-hidden lg:h-screen h-auto" id="scroll">
-                <!-- <div class="flex items-center text-gray-500 hover:text-gray-600 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <polyline points="15 6 9 12 15 18" />
-                    </svg>
-                    <p class="text-sm pl-2 leading-none">Back</p>
-                </div> -->
                 <p class="lg:text-4xl text-3xl font-black leading-10 text-gray-800 pt-3">Bag</p>
                 <div *ngFor="let sneaker of sneakers"  class="md:flex items-strech py-8 md:py-10 lg:py-8 border-t border-gray-50">
                     <div class="md:w-4/12 2xl:w-1/4 w-full">
@@ -19,11 +12,6 @@
                     <div class="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
                         <div class="flex items-center justify-between w-full pt-1">
                             <p class="text-base font-black leading-none text-gray-800">title: {{sneaker.title}} </p>
-                            <!-- <select aria-label="Select quantity" class="py-2 px-1 border border-gray-200 mr-6 focus:outline-none">
-                                <option>01</option>
-                                <option>02</option>
-                                <option>03</option>
-                            </select> -->
                         </div>
                         <p class="text-xs leading-3 text-gray-600 py-4">desc: {{sneaker.desc}}</p>
                         <p class="w-96 text-xs leading-3 text-gray-600">size:  {{sneaker.size}} </p>
@@ -78,4 +66,112 @@
         }
     </style>
 </div>
-</nav>
+</nav> -->
+
+
+
+<!-- <div class="container mx-auto">
+<div *ngFor="let product of products ">
+    <img [src]="product.picture" class="mt-5 max-h-40 w-full object-contain "  [routerLink]="['/products', product.id]"/>
+      <div class="bg-white dark:bg-gray-800 w-full p-4" [routerLink]="['/products', product.id]">
+        <p class="text-indigo-500 text-md font-medium"></p>
+        <p>id: {{ product.id }}</p>
+        <p class="text-gray-800 dark:text-white text-xl font-medium mb-2">
+          title: {{ product.title }}
+        </p>
+
+        <p class="text-gray-400 dark:text-gray-300 font-light text-md">
+          price: {{ product.price }}
+        </p>
+        <p class="text-gray-400 dark:text-gray-300 font-light text-md">
+          RAM: {{ product.spec.RAM }}
+        </p>
+        <p class="text-gray-400 dark:text-gray-300 font-light text-md">
+          ROM:{{ product.spec.ROM }}
+        </p>
+</div>
+</div> -->
+
+<div class="w-screen h-screen mt-20 bg-white bg-opacity-90 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0" id="chec-div">
+    <div class="w-full absolute z-10 right-0 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700" id="checkout">
+        <div class="flex items-end lg:flex-row flex-col justify-end" id="cart">
+            <div class="lg:w-1/2 md:w-8/12 w-full lg:px-8 lg:py-14 md:px-6 px-4 md:py-8 py-4 bg-white overflow-y-auto overflow-x-hidden lg:h-screen h-auto" id="scroll">
+                <div class="flex items-center text-gray-500 hover:text-gray-600 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left text-[#ff9ef9]" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="15 6 9 12 15 18" />
+                    </svg>
+                    <a href="/products"><p class="text-sm pl-2 leading-none text-[#ff9ef9]">Back</p> </a>
+                </div>
+                <div *ngFor="let sneaker of sneakers " class="md:flex items-strech py-8 md:py-10 lg:py-8 border-t border-gray-50" >
+                    <div class="md:w-4/12 2xl:w-1/4 w-full">
+                        <img [src]="sneaker.img"  class="h-full object-center object-cover md:block hidden" />
+                        <img [src]="sneaker.img" class="md:hidden w-full h-full object-center object-cover" />
+                    </div>
+                    <div class="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
+                        <p class="text-xs leading-3 text-gray-800 md:pt-0 pt-4">{{ sneaker.id }}</p>
+                        <div class="flex items-center justify-between w-full pt-1">
+                            <p class="text-base font-black leading-none text-gray-800">{{ sneaker.title }}</p>
+                           
+                        </div>
+                        <p class="w-96 text-xs leading-3 text-gray-600">size:  {{sneaker.size}} </p>
+                        <div class="flex itemms-center">
+                            <p [routerLink]="['/products', sneaker.productId]" class="text-xs leading-3 underline text-gray-800 cursor-pointer">More</p>
+                            <p class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">Remove</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-5">
+                            <div class="flex itemms-center">
+                                <!-- <p class="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p> -->
+                                <!-- <p class="text-xs leading-3 underline text-[#ff9ef9] pl-5 cursor-pointer" (click)="delete(product.id)">Remove</p> -->
+                            </div>
+                            <p class="text-base font-black leading-none text-gray-800">$ {{ sneaker.price }}</p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="lg:w-96 md:w-8/12 w-full bg-gray-100 h-full">
+                <div class="flex flex-col lg:h-screen h-auto lg:px-8 md:px-7 px-4 lg:py-20 md:py-10 py-6  overflow-y-auto">
+                    <div>
+                        <p class="lg:text-4xl text-3xl font-black leading-9 text-gray-800 fam">Summary</p>
+                        <div class="flex items-center justify-between pt-16">
+                            <p class="text-base leading-none text-gray-800">Subtotal</p>
+                            <p class="text-base leading-none text-gray-800">$9,000</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-5">
+                            <p class="text-base leading-none text-gray-800">Shipping</p>
+                            <p class="text-base leading-none text-gray-800">$30</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-5">
+                            <p class="text-base leading-none text-gray-800">Tax</p>
+                            <p class="text-base leading-none text-gray-800">$35</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center pb-6 justify-between lg:pt-5 pt-20">
+                            <p class="text-2xl leading-normal text-gray-800">Total</p>
+                            <p class="text-2xl font-bold leading-normal text-right text-gray-800">$10,240</p>
+                        </div>
+                        <button class="text-base leading-none w-full py-5 bg-[#7695f1] border-[#7695f1] border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#7695f1] text-white">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* width */
+        #scroll::-webkit-scrollbar {
+            width: 1px;
+        }
+
+        /* Track */
+        #scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        #scroll::-webkit-scrollbar-thumb {
+            background: rgb(133, 132, 132);
+        }
+    </style>
+</div>

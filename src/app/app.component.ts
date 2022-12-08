@@ -8,6 +8,7 @@ import { getAuth, signOut } from "firebase/auth";
 })
 export class AppComponent {
   title = 'a-frontend';
+  isOpenMenu = false
 
 
   logOut(){
@@ -17,6 +18,12 @@ export class AppComponent {
   }).catch((error) => {
     // An error happened.
   });
+  }
+  toggleMenu(){
+    this.isOpenMenu = !this.isOpenMenu
+  }
+  closeMenu(){
+    this.isOpenMenu = false
   }
   
 }

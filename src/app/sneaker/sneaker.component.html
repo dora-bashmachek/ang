@@ -1,4 +1,4 @@
-<div class="container mx-auto">
+<!-- <div class="container mx-auto">
   <div class="wrapper antialiased text-gray-900 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
 	<div class="disp">
 	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -57,12 +57,12 @@
 	  </div>
 	  <div class="flex space-x-2 mb-4 text-sm font-medium">
 		<div class="flex space-x-4">
-		  <!-- <button class="px-6 h-12 uppercase font-semibold tracking-wider border-2 border-black bg-teal-400 text-black" type="submit">
-			Buy now
-		  </button> -->
+		 
+		  
 		  <button (click)="addToCart(sneaker.id)" class="hover:bg-teal-400 px-6 h-12 uppercase font-semibold tracking-wider border border-slate-200 text-slate-900" type="button">
 			Add to bag
 		  </button>
+		
 		</div>
 	  </div>
 	  
@@ -70,5 +70,81 @@
 	  </div>
 	</div>
 	  </div>
-  </div>
-  
+  </div> -->
+<!-- 
+  <p *ngFor="let alert of alerts">
+	<ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+</p>
+<p>
+	<button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+</p> -->
+
+
+
+
+
+<!-- component -->
+<section class="text-gray-700 body-font overflow-hidden bg-white">
+	<div class="container px-5 py-24 mx-auto">
+		<a href="/products"><p class="text-sm pl-2 leading-none text-[#ff9ef9]">Back</p> </a>
+	  <div class=" mx-auto flex justify-center flex-wrap">
+		<img alt="ecommerce" class="lg:w-1/4 h-auto w-full object-cover object-center rounded border border-gray-200" [src]="sneaker.img">
+		<div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+		  <h2 class="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
+		  <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ sneaker.title }}</h1>
+		  <div class="flex mb-4">
+		  </div>
+		  <p class="leading-relaxed">{{ sneaker.desc }}</p>
+		  <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+			<div class="flex ml-6 items-center">
+			  <span class="mr-3">Size:</span>
+			  <div class="relative">
+				<div class="space-x-3 flex text-sm font-medium">
+					<label>
+					  <input class="sr-only peer" name="size" type="radio" value="36" checked (change)="handleChange($event)" />
+					  <div class="relative w-10 h-10 flex items-center justify-center text-black peer-checked:bg-black peer-checked:text-white before:absolute before:z-[-1] before:top-0.5 before:left-0.5 before:w-full before:h-full peer-checked:before:bg-teal-400">
+						36
+					  </div>
+					</label>
+					<label>
+					  <input class="sr-only peer" name="size" type="radio" value="37" (change)="handleChange($event)" />
+					  <div class="relative w-10 h-10 flex items-center justify-center text-black peer-checked:bg-black peer-checked:text-white before:absolute before:z-[-1] before:top-0.5 before:left-0.5 before:w-full before:h-full peer-checked:before:bg-teal-400">
+						37
+					  </div>
+					</label>
+					<label>
+					  <input class="sr-only peer" name="size" type="radio" value="38" (change)="handleChange($event)" />
+					  <div class="relative w-10 h-10 flex items-center justify-center text-black peer-checked:bg-black peer-checked:text-white before:absolute before:z-[-1] before:top-0.5 before:left-0.5 before:w-full before:h-full peer-checked:before:bg-teal-400">
+						38
+					  </div>
+					</label>
+					<label>
+					  <input class="sr-only peer" name="size" type="radio" value="39" (change)="handleChange($event)" />
+					  <div class="relative w-10 h-10 flex items-center justify-center text-black peer-checked:bg-black peer-checked:text-white before:absolute before:z-[-1] before:top-0.5 before:left-0.5 before:w-full before:h-full peer-checked:before:bg-teal-400">
+						39
+					  </div>
+					</label>
+					<label>
+					  <input class="sr-only peer" name="size" type="radio" value="40" (change)="handleChange($event)" />
+					  <div class="relative w-10 h-10 flex items-center justify-center text-black peer-checked:bg-black peer-checked:text-white before:absolute before:z-[-1] before:top-0.5 before:left-0.5 before:w-full before:h-full peer-checked:before:bg-teal-400">
+						40
+					  </div>
+					</label>
+				  </div>
+				<span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
+				  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
+					<path d="M6 9l6 6 6-6"></path>
+				  </svg>
+				</span>
+			  </div>
+			</div>
+		  </div>
+		  <div class="flex">
+			<span class="title-font font-medium text-2xl text-gray-900">{{ sneaker.price }}</span>
+			<button (click)="addToCart(sneaker.id)" class="flex ml-auto text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-black rounded">BUY NOW</button>
+			
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>

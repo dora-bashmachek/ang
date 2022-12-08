@@ -5,16 +5,25 @@ import { Sneaker } from '../models/sneaker.model';
 import { CartComponent } from '../cart/cart.component';
 import { getAuth } from 'firebase/auth';
 
+// const ALERTS: Alert[] = [
+//   {
+// 		type: 'info',
+// 		message: 'This is an info alert',
+// 	}
+// ];
+
 @Component({
   selector: 'app-product',
   templateUrl: './sneaker.component.html',
   styleUrls: ['./sneaker.component.css'],
 })
+
 export class SneakerComponent implements OnInit {
   id: string;
   sneaker: Sneaker = new Sneaker();
   sneakers: Sneaker[] = [new Sneaker()];
   size: string = "36";
+  // alerts: Alert[];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,6 +38,7 @@ export class SneakerComponent implements OnInit {
     );
     this.sneaker = new Sneaker(sneaker.id, sneaker.title, sneaker.price, sneaker.desc, sneaker.img);
   }
+  
   async addToCart(id: string) {
     console.log(id);
     const auth = getAuth().onAuthStateChanged(async user => {
