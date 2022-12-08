@@ -10,7 +10,7 @@
         </a>
 		<div class="flex items-center justify-between">
             <span class="text-3xl font-bold text-gray-900 ">price: {{ sneaker.price }}</span>
-            <a (click)="addToCart(sneaker.id)"type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center   ">Add to cart</a>
+            <a [routerLink]="['/products', sneaker.id]" class="text-white bg-neutral-900 hover:bg-stone-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">подробней</a>
         </div>
     </div>
 </div>
