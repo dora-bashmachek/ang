@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { db } from 'src/utils/firebase';
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 import FirebaseMethods from 'src/utils/firebaseMethods';
 import { getAuth } from 'firebase/auth';
@@ -14,6 +14,8 @@ export class CartComponent implements OnInit {
   sneakers: any = null;
   constructor(private firebaseMethods: FirebaseMethods) { }
 
+
+  
   async ngOnInit(): Promise<void> {
     const auth = getAuth().onAuthStateChanged(async user => {
 
@@ -54,5 +56,12 @@ export class CartComponent implements OnInit {
       console.log(this.sneakers);
     })
   }
+  // async deleteDoc(id:string){
+  //   const idx = this.sneakers.findIndex(x => x.id == id)
+  //   // const productsSnapshot = await this.firebaseMethods.removeDocument('cart', this.tours.id)
+  //   await deleteDoc(doc(db,'sneakers', this.sneakers[idx].id));
+  //   console.log(this.sneakers[idx]);
+    
+  // }
 
 }
