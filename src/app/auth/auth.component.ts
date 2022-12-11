@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {db} from '../../utils/firebase' 
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword  } from "firebase/auth";
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +11,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword  } 
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,12 +23,14 @@ createUserWithEmailAndPassword(auth, email,password)
     // Signed in 
     const user = userCredential.user;
     console.log(user);
-    
+    console.log(user);
+    this.router.navigate(['/products'])
     // ...
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    alert("Проверьте правильность введенных вами данных")
     // ..
   });
 }

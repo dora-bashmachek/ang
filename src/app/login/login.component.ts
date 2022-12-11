@@ -5,6 +5,8 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from 'firebase/auth';
+import {provideRouter, Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,7 @@ import {
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
   signIn(email: string, password: string) {
@@ -21,12 +23,14 @@ export class LoginComponent implements OnInit {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        this.router.navigate(['/products'])
         console.log(user);
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        alert("Данные введены не правильно")
       });
   }
 

@@ -6,10 +6,10 @@
     </a>
 	<div class="px-5 pb-5">
         <a [routerLink]="['/products', sneaker.id]">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 ">title: {{ sneaker.title }}</h5>
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 "> {{ sneaker.title }}</h5>
         </a>
 		<div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 ">price: {{ sneaker.price }}</span>
+            <span class="text-3xl font-bold text-gray-900 "> {{ sneaker.price }}$</span>
             <a [routerLink]="['/products', sneaker.id]" class="text-white bg-neutral-900 hover:bg-stone-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">подробнее</a>
         </div>
     </div>

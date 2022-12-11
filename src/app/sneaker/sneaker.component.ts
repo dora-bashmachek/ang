@@ -5,13 +5,6 @@ import { Sneaker } from '../models/sneaker.model';
 import { CartComponent } from '../cart/cart.component';
 import { getAuth } from 'firebase/auth';
 
-// const ALERTS: Alert[] = [
-//   {
-// 		type: 'info',
-// 		message: 'This is an info alert',
-// 	}
-// ];
-
 @Component({
   selector: 'app-product',
   templateUrl: './sneaker.component.html',
@@ -23,7 +16,6 @@ export class SneakerComponent implements OnInit {
   sneaker: Sneaker = new Sneaker();
   sneakers: Sneaker[] = [new Sneaker()];
   size: string = "36";
-  // alerts: Alert[];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -36,7 +28,9 @@ export class SneakerComponent implements OnInit {
       'sneakers',
       this.id
     );
-    this.sneaker = new Sneaker(sneaker.id, sneaker.title, sneaker.price, sneaker.desc, sneaker.img);
+    this.sneaker = new Sneaker(sneaker.id, sneaker.title, sneaker.price, sneaker.img, sneaker.desc,);
+    console.log(sneaker.desc);
+    
   }
   
   async addToCart(id: string) {
@@ -45,6 +39,9 @@ export class SneakerComponent implements OnInit {
 
         const sneaker = { ...this.sneaker, productId:this.sneaker.id, uid: user?.uid, size:this.size };
         await this.firebaseMethods.create('cart', sneaker);
+        if (getAuth()){
+          alert("Товар добавлен в корзину")
+        }
     });
 
   }

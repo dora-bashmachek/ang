@@ -109,7 +109,7 @@
                         <img [src]="sneaker.img" class="md:hidden w-full h-full object-center object-cover" />
                     </div>
                     <div class="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
-                        <p class="text-xs leading-3 text-gray-800 md:pt-0 pt-4">{{ sneaker.id }}</p>
+                        <!-- <p class="text-xs leading-3 text-gray-800 md:pt-0 pt-4">{{ sneaker.id }}</p> -->
                         <div class="flex items-center justify-between w-full pt-1">
                             <p class="text-base font-black leading-none text-gray-800">{{ sneaker.title }}</p>
                            
@@ -117,7 +117,7 @@
                         <p class="w-96 text-xs leading-3 text-gray-600">size:  {{sneaker.size}} </p>
                         <div class="flex itemms-center">
                             <p [routerLink]="['/products', sneaker.productId]" class="text-xs leading-3 underline text-gray-800 cursor-pointer">More</p>
-                            <p class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">Remove</p>
+                            <p (click)="deleteFromCart(sneaker.id)" class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">Remove</p>
                         </div>
                         <div class="flex items-center justify-between pt-5">
                             <div class="flex itemms-center">

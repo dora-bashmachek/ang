@@ -11,6 +11,7 @@ import { getAuth } from 'firebase/auth';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
+  
   sneakers: any = null;
   constructor(private firebaseMethods: FirebaseMethods) { }
 
@@ -56,12 +57,19 @@ export class CartComponent implements OnInit {
       console.log(this.sneakers);
     })
   }
-  // async deleteDoc(id:string){
-  //   const idx = this.sneakers.findIndex(x => x.id == id)
-  //   // const productsSnapshot = await this.firebaseMethods.removeDocument('cart', this.tours.id)
-  //   await deleteDoc(doc(db,'sneakers', this.sneakers[idx].id));
-  //   console.log(this.sneakers[idx]);
+  async deleteFromCart(id: string){
+    const auth = getAuth().onAuthStateChanged(async (user) => {
+    const idx = this.sneakers.findIndex((x: { id: string; }) => x.id == id)
     
-  // }
+    console.log(id, this.sneakers,idx, user);
+    
+    if (idx != -1) {
+      const Tour = {...this.sneakers[idx], uid:user?.uid}
+      await this.firebaseMethods.removeDocument('cart', Tour.id)
+      this.sneakers.splice(this.sneakers.id, 1,)
+    }
+    });
+    
+  }
 
 }
