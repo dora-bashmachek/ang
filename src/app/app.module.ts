@@ -12,7 +12,8 @@ import { AuthComponent } from './auth/auth.component';
 import { CartComponent } from './cart/cart.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FooterComponent } from './footer/footer.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { PopUpComponent } from './pop-up/pop-up.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +23,16 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     AuthComponent,
     CartComponent,
-    FooterComponent
+    FooterComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FirebaseMethods
+    FirebaseMethods,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
