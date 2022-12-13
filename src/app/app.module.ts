@@ -13,7 +13,8 @@ import { CartComponent } from './cart/cart.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FooterComponent } from './footer/footer.component';
 // import { MatDialogModule } from '@angular/material/dialog';
-import { PopUpComponent } from './pop-up/pop-up.component'
+import { PopUpComponent } from './pop-up/pop-up.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { PopUpComponent } from './pop-up/pop-up.component'
     FormsModule,
     HttpClientModule,
     FirebaseMethods,
+    NgbModule,
     // MatDialogModule
   ],
   providers: [],

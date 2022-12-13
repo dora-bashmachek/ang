@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { db } from 'src/utils/firebase';
 import { collection, query, where, getDocs, deleteDoc, doc } from "firebase/firestore";
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import FirebaseMethods from 'src/utils/firebaseMethods';
 import { getAuth } from 'firebase/auth';
@@ -13,7 +14,8 @@ import { getAuth } from 'firebase/auth';
 export class CartComponent implements OnInit {
   
   sneakers: any = null;
-  constructor(private firebaseMethods: FirebaseMethods) { }
+  closeResult: any = null;
+  constructor(private firebaseMethods: FirebaseMethods, private modalService: NgbModal) { }
 
 
   
@@ -71,5 +73,24 @@ export class CartComponent implements OnInit {
     });
     
   }
+  open(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = 'Closed with: ${result}';
+      }, (reason) => {
+      this.closeResult = 'Dismissed ${this.getDismissReason(reason)}';
+    });
+  }
 
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return 'with: ${reason}';
+    }
+  }
+  // Subtotal () {
+  //   this.products.reduce((sum, product) => sum+product.price, 0)
+  // }
 }

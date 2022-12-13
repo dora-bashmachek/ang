@@ -1,1 +1,33 @@
-<p>pop-up works!</p>
+<ng-template #content let-modal>
+<div class="modal-header">
+<h4 class="modal-title" id="modal-basic-title">Your order</h4>
+<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<form>
+<div class="form-group">
+<label for="firstname">Your name</label>
+<div class="input-group">
+<input id="firstname" class="form-control">
+</div>
+</div>
+<div class="form-group">
+<label for="firstname">Your number</label>
+<div class="input-group">
+<input id="number" class="form-control">
+</div>
+</div>
+<div class="form-group">
+<label for="firstname">Your number</label>
+<div class="input-group">
+<input id="Your adress" class="form-control">
+</div>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">buy</button>
+</div>
+</ng-template>
