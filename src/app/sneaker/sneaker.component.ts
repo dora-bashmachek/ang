@@ -36,11 +36,13 @@ export class SneakerComponent implements OnInit {
   async addToCart(id: string) {
     console.log(id);
     const auth = getAuth().onAuthStateChanged(async user => {
-
+if (user){
         const sneaker = { ...this.sneaker, productId:this.sneaker.id, uid: user?.uid, size:this.size };
         await this.firebaseMethods.create('cart', sneaker);
-        if (getAuth()){
           alert("Товар добавлен в корзину")
+        }
+        else {
+          alert("Сначала авторизуйтесь прежде чем как добавить товар в корзину")
         }
     });
 
